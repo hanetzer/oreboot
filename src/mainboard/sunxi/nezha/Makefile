@@ -18,6 +18,3 @@ run:
 	$(XFEL) ddr ddr3
 	$(XFEL) write $(MEMADDR) $(IMAGE)
 	$(XFEL) exec $(MEMADDR)
-
-openocd:
-	$(shell which openocd) -f openocd.cfg -c "flash write_image erase unlock $(IMAGE) 0x20000000; shutdown"
