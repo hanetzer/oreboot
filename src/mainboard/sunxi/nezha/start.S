@@ -131,11 +131,12 @@ _avoid:
 
 	/* Check processor id, and startup slave cores */
 	csrr a0, mhartid
+/*
 	beqz a0, 2f
 1:	//call sys_smp_secondary_startup
 	j 1b
 2:	nop
-
+*/
 	/* Copyself to link address */
  // la t0, _start
  // la t1, _image_start
