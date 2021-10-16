@@ -14,6 +14,11 @@ cibuild: $(IMAGE)
 ciclippy: clippy
 citest: skiptest
 
+boot:
+	$(XFEL) ddr ddr3
+	$(XFEL) write $(MEMADDR) target/riscv64gc-unknown-none-elf/release/bootblob.bin
+	$(XFEL) exec $(MEMADDR)
+
 run:
 	$(XFEL) ddr ddr3
 	$(XFEL) write $(MEMADDR) $(IMAGE)
